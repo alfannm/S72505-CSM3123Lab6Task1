@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Root layout that arranges all UI components vertically
+    and fills the entire screen.
+-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -6,6 +11,9 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!--
+        Title section that labels the sensor list.
+    -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,18 +22,29 @@
         android:textStyle="bold"
         android:layout_marginBottom="10dp"/>
 
+    <!--
+        ListView that displays all available sensors on the device.
+        It expands to fill the remaining screen space.
+    -->
     <ListView
         android:id="@+id/sensorListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
+    <!--
+        Divider used to visually separate the sensor list
+        from the live sensor readings section.
+    -->
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/darker_gray"
         android:layout_marginVertical="10dp"/>
 
+    <!--
+        Label indicating the start of the live sensor readings section.
+    -->
     <TextView
         android:id="@+id/sensorDataTitle"
         android:layout_width="wrap_content"
@@ -33,6 +52,10 @@
         android:text="Live Sensor Readings:"
         android:textStyle="italic" />
 
+    <!--
+        TextView that displays real-time sensor values
+        updated dynamically from the Java code.
+    -->
     <TextView
         android:id="@+id/sensorDataValue"
         android:layout_width="match_parent"
